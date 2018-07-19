@@ -77,6 +77,11 @@ fish
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 
+/obj/effect/mob_spawn/human/fish
+	name = "fish"
+	outfit = /datum/outfit/job/assistant
+	flavour_text = "<span class='big bold'>KILL THE FISHERMEN</span>"
+
 /datum/outfit/job/fisherman
 	name = "fisherman"
 	jobtype = /datum/job/captain
@@ -142,10 +147,10 @@ fish
 	jobtype = /datum/job/assistant
 	belt = /obj/item/pda/chaplain
 	uniform = /obj/item/clothing/under/rank/chaplain
-	backpack_contents = list(/obj/item/zombie_hand/fish = 2,/obj/item/clothing/glasses/night=1,/obj/item/tank/internals/oxygen/fish_lungs=2)
+	backpack_contents = list(/obj/item/clothing/glasses/night=1,/obj/item/tank/internals/oxygen/fish_lungs=2)
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack
 	suit = /obj/item/clothing/suit/space/hardsuit/carp/foiosh
 	mask = /obj/item/clothing/mask/gas/syndicate/fish
-	l_hand = /obj/item/zombie_hand/fish
+	l_hand = /obj/item/tank/jetpack/oxygen
 	r_hand = /obj/item/zombie_hand/fish
