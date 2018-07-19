@@ -113,9 +113,10 @@ fish
 
 /obj/item/zombie_hand/fish/attack_self(mob/user)
 	var/turf/t = get_turf(user)
-	if(!istype(t, /turf/open/floor/plating/beach/water || !istype(t, /turf/open/floor/plating/ashplanet/wateryrock)))
-		to_chat(user, "YOU CANT SWIM HERE THIS ISNT WATER!!!")
-		return
+	if(!istype(t, /turf/open/floor/plating/beach/water))
+		if(!istype(t, /turf/open/floor/plating/ashplanet/wateryrock))
+			to_chat(user, "YOU CANT SWIM HERE THIS ISNT WATER!!!")
+			return
 	if(user.z == 2)
 		to_chat(user, "You swim down")
 		user.z = 3
