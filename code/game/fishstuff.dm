@@ -16,48 +16,15 @@ fish
 /mob/living/carbon/human/proc/fuck(mob/living/user, mob/living/target)
 	visible_message("[target] lays down as [user] starts to hump [target]")
 	to_chat(world, "<span class='userdanger'>[user] is ERPing with [target] in area [get_area(user)], KILL THEM</span>")
-	target.Knockdown(60 * 12)
+	target.Knockdown(5)
 	sleep(5)
 	user.pixel_y += 5
 	user.pixel_x += 5
-	sleep(5)
-	user.pixel_y -= 5
-	sleep(5)
-	user.pixel_y += 10
-	user.pixel_x -= 15
-	sleep(5)
-	user.pixel_y -= 5
-	sleep(5)
-	user.pixel_y += 8
-	user.pixel_x += 10
-	sleep(5)
-	user.pixel_y += 5
-	user.pixel_x += 5
-	sleep(5)
-	user.pixel_y -= 5
-	sleep(5)
-	user.pixel_y += 10
-	user.pixel_x -= 15
-	sleep(5)
-	user.pixel_y -= 5
-	sleep(5)
-	user.pixel_y += 8
-	user.pixel_x += 10
-	sleep(5)
-	user.pixel_y += 5
-	user.pixel_x += 5
-	sleep(5)
-	user.pixel_y -= 5
-	sleep(5)
-	user.pixel_y += 10
-	user.pixel_x -= 15
-	sleep(5)
-	user.pixel_y -= 5
-	sleep(5)
-	user.pixel_y += 8
-	user.pixel_x += 10
 	sleep(5)
 	user.pixel_y -= 10
+	user.pixel_x -= 10
+	sleep(5)
+
 	visible_message("[user] does a backflip as they conclude their erp")
 	var/obj/effect/decal/cleanable/flour/smemen = new(src.loc)
 	smemen.name = "white goo shit"
