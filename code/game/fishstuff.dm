@@ -63,6 +63,7 @@ fish
 	smemen.name = "white goo shit"
 	user.pixel_y = initial(user.pixel_y)
 	user.pixel_x = initial(user.pixel_x)
+	user.say("*flip")
 
 /obj/effect/mob_spawn/human/fisherman
 	name = "fisherman"
@@ -72,6 +73,9 @@ fish
 	random = TRUE
 	flavour_text = "<span class='big bold'>You are a fisherman! KILL FISH AND EAT THEM YOU HAVE A FAMILY TO FEED YOU FUCKWIT</span>"
 	assignedrole = "fuckwit"
+	name = "sleeper"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
 
 /datum/outfit/job/fisherman
 	name = "fisherman"
