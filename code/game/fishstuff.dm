@@ -6,13 +6,7 @@ fish
 	. = ..()
 	if(user in orange(src, 1))
 		fuck(user, src)
-
-/obj/item/clothing/under/rank/fishman
-	icon_state = "fisherman"
-	desc = "fish"
-	name = "fishman suit wear this"
-
-
+		
 /mob/living/carbon/human/proc/fuck(mob/living/user, mob/living/target)
 	visible_message("[target] lays down as [user] starts to hump [target]")
 	to_chat(world, "<span class='userdanger'>[user] is ERPing with [target] in area [get_area(user)], KILL THEM</span>")
@@ -30,7 +24,7 @@ fish
 	smemen.name = "white goo shit"
 	user.pixel_y = initial(user.pixel_y)
 	user.pixel_x = initial(user.pixel_x)
-	user.say("*flip")
+	user.emote("flip")
 
 /obj/effect/mob_spawn/human/fisherman
 	name = "fisherman"
@@ -58,6 +52,11 @@ fish
 	satchel = /obj/item/storage/backpack/cultpack
 	l_hand = /obj/item/twohanded/required/chainsaw/meme
 
+/obj/item/clothing/under/rank/fishman
+	icon_state = "fisherman"
+	desc = "fish"
+	name = "fishman suit wear this"
+	
 /obj/item/twohanded/required/chainsaw/meme
 	name = "fishing rod"
 	desc = "It fishes things :)"
