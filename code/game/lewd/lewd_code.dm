@@ -7,7 +7,7 @@
 	//C.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
 /mob/var/lastmoan
-/mob/var/more_lewd_erp = FALSE //tell admins if you want to erp, set this to 1
+/mob/var/more_lewd_erp = TRUE //tell admins if you want to erp, set this to 1
 /mob/var/fucked_amt = 0 //important vv reasons
 /mob/var/fucking_someone_amt = 0
 /mob/var/last_partner
