@@ -7,12 +7,6 @@ fish
 	if(user in orange(src, 1))
 		fuck(user, src)
 
-/obj/item/clothing/under/rank/fishman
-	icon_state = "fisherman"
-	desc = "fish"
-	name = "fishman suit wear this"
-
-
 /mob/living/carbon/human/proc/fuck(mob/living/user, mob/living/target)
 	visible_message("[target] lays down as [user] starts to hump [target]")
 	to_chat(world, "<span class='userdanger'>[user] is ERPing with [target] in area [get_area(user)], KILL THEM</span>")
@@ -25,12 +19,12 @@ fish
 	user.pixel_x -= 10
 	sleep(5)
 
-	visible_message("[user] does a backflip as they conclude their erp")
+	visible_message("<b>[user]</b> does a backflip as they conclude their erp")
 	var/obj/effect/decal/cleanable/flour/smemen = new(src.loc)
 	smemen.name = "white goo shit"
 	user.pixel_y = initial(user.pixel_y)
 	user.pixel_x = initial(user.pixel_x)
-	user.say("*flip")
+	user.emote("flip")
 
 /obj/effect/mob_spawn/human/fisherman
 	name = "fisherman"
@@ -76,6 +70,11 @@ fish
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit = /datum/outfit/job/assistant
 	antag_rep = 7
+
+/obj/item/clothing/under/rank/fishman
+	icon_state = "fisherman"
+	desc = "fish"
+	name = "fishman suit wear this"
 
 /obj/item/zombie_hand/fish
 	name = "fin"

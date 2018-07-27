@@ -18,6 +18,13 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 	has_gravity = STANDARD_GRAVITY
 	ambientsounds = list('sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg','sound/ambience/ambiodd.ogg','sound/ambience/ambinice.ogg')
 
+/area/awaymission/beach/secretbar
+	name = "Secret bar"
+	icon_state = "bar"
+	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
+	ambientsounds = null
+	noteleport = TRUE
+
 /area/awaymission/errorroom
 	name = "Super Secret Room"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
