@@ -24,7 +24,7 @@
 
 	if(H.can_speak_vocal())
 		visible_message("<font color=purple><B>\The [src]</B> [pick("moans", "moans in pleasure",)].</font>")
-		playsound(get_turf(src), "lewd/sound/interactions/moan_[gender == FEMALE ? "f" : "m"][moan].ogg", 70, 1, 0)
+		playsound(get_turf(src), "code/game/lewd/sound/interactions/moan_[gender == FEMALE ? "f" : "m"][moan].ogg", 70, 1, 0)
 	if(!H.can_speak_vocal())
 		src.emote("<font color=purple><B>[src]</B> [pick("mimes a pleasured moan","moans in silence")].</font>")
 
@@ -83,9 +83,9 @@
 		message = pick("cums violently!", "twists in orgasm.")
 		lust -= pick(10, 15, 20, 25)
 	if(gender == MALE)
-		playsound(loc, "lewd/sound/interactions/final_m[rand(1, 3)].ogg", 90, 1, 0)
+		playsound(loc, "code/game/lewd/sound/interactions/final_m[rand(1, 3)].ogg", 90, 1, 0)
 	else if(gender == FEMALE)
-		playsound(loc, "lewd/sound/interactions/final_f[rand(1, 5)].ogg", 70, 1, 0)
+		playsound(loc, "code/game/lewd/sound/interactions/final_f[rand(1, 5)].ogg", 70, 1, 0)
 
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	multiorgasms += 1
@@ -168,7 +168,7 @@
 				message = "begins to lick \the [partner]."
 			partner.set_is_fucking(src, CUM_TARGET_MOUTH)
 
-		playsound(get_turf(src), "lewd/sound/interactions/bj[rand(1, 11)].ogg", 50, 1, -1)
+		playsound(get_turf(src), "code/game/lewd/sound/interactions/bj[rand(1, 11)].ogg", 50, 1, -1)
 		visible_message("<b><font color=purple>\The [src]</b> [message]</font>")
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src)
 		partner.dir = get_dir(partner,src)
@@ -201,7 +201,7 @@
 				message = "shoves their crotch into \the [partner]'s face."
 			set_is_fucking(partner , CUM_TARGET_MOUTH)
 
-		playsound(loc, "lewd/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
 		partner.dir = get_dir(partner,src)
@@ -229,7 +229,7 @@
 			message = "forces their dick deep down \the [partner]'s throat"
 			set_is_fucking(partner , CUM_TARGET_THROAT)
 
-		playsound(loc, "lewd/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		handle_post_sex(lust_increase, CUM_TARGET_THROAT, partner)
 		partner.dir = get_dir(partner,src)
@@ -248,7 +248,7 @@
 			message = "works their cock into \the [partner]'s asshole."
 			set_is_fucking(partner, CUM_TARGET_ANUS)
 
-		playsound(loc, "lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		handle_post_sex(lust_increase, CUM_TARGET_ANUS, partner)
 		partner.handle_post_sex(lust_increase, null, src)
@@ -269,7 +269,7 @@
 			message = "slides their cock into \the [partner]'s pussy."
 			set_is_fucking(partner, CUM_TARGET_VAGINA)
 
-		playsound(loc, "lewd/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		handle_post_sex(lust_increase, CUM_TARGET_VAGINA, partner)
 		partner.handle_post_sex(lust_increase, null, src)
@@ -290,7 +290,7 @@
 			message = "slides their pussy onto \the [partner]'s cock."
 			partner.set_is_fucking(src, CUM_TARGET_VAGINA)
 
-		playsound(loc, "lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		partner.handle_post_sex(lust_increase, CUM_TARGET_VAGINA, src)
 		handle_post_sex(lust_increase, null, partner)
@@ -311,7 +311,7 @@
 			message = "lowers their ass onto \the [partner]'s cock."
 			partner.set_is_fucking(src, CUM_TARGET_ANUS)
 
-		playsound(loc, "lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		partner.handle_post_sex(lust_increase, CUM_TARGET_ANUS, src)
 		handle_post_sex(lust_increase, null, partner)
@@ -324,7 +324,7 @@
 /mob/proc/do_fingering(mob/partner)
 	if(more_lewd_erp == TRUE)
 		visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].", "fingers \the [partner]'s pussy.", "fingers \the [partner]'s pussy hard.")]</font>")
-		playsound(loc, "lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 		partner.handle_post_sex(10, null, src)
 		partner.dir = get_dir(partner, src)
 		do_fucking_animation(get_dir(src, partner))
@@ -335,7 +335,7 @@
 /mob/proc/do_fingerass(mob/partner)
 	if(more_lewd_erp == TRUE)
 		visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].", "fingers \the [partner]'s asshole.", "fingers \the [partner] hard.")]</span></font>")
-		playsound(loc, "lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 		partner.handle_post_sex(10, null, src)
 		partner.dir = get_dir(partner, src)
 		do_fucking_animation(get_dir(src, partner))
@@ -345,7 +345,7 @@
 /mob/proc/do_rimjob(mob/partner)
 	if(more_lewd_erp == TRUE)
 		visible_message("<font color=purple><b>\The [src]/<b> licks \the [partner]'s asshole.</span></font>")
-		playsound(loc, "lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 		partner.handle_post_sex(10, null, src)
 		partner.dir = get_dir(src, partner)
 		do_fucking_animation(get_dir(src, partner))
@@ -364,7 +364,7 @@
 			message = "[pick("wraps their hand around \the [partner]'s cock.", "starts playing with \the [partner]'s cock")]"
 			partner.set_is_fucking(src, CUM_TARGET_HAND)
 
-		playsound(src, "lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
+		playsound(src, "code/game/lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		partner.handle_post_sex(lust_increase, CUM_TARGET_HAND, src)
 		partner.dir = get_dir(partner,src)
@@ -385,7 +385,7 @@
 			set_is_fucking(partner , CUM_TARGET_BREASTS)
 
 
-		playsound(loc, "lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		handle_post_sex(lust_increase, CUM_TARGET_BREASTS, partner)
 		partner.dir = get_dir(partner,src)
@@ -403,7 +403,7 @@
 			message = "[pick(list("grabs the back of \the [partner]'s head and forces it into their asscheeks.", "squats down and plants their ass right on \the [partner]'s face"))]</span>"
 			set_is_fucking(partner , GRINDING_FACE_WITH_ANUS)
 
-		playsound(loc, "lewd/sound/interactions/squelch[rand(1, 3)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/squelch[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		handle_post_sex(1, null, src)
 		partner.dir = get_dir(src, partner)
@@ -425,7 +425,7 @@
 		else
 			message = "licks \the [partner]'s feet."
 
-		playsound(loc, "lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		handle_post_sex(1, null, src)
 		partner.dir = get_dir(src, partner)
@@ -461,7 +461,7 @@
 
 			set_is_fucking(partner , GRINDING_FACE_WITH_FEET)
 
-		playsound(loc, "lewd/sound/interactions/foot_dry[rand(1, 4)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/foot_dry[rand(1, 4)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		partner.handle_post_sex(1, null, src)
 		partner.dir = get_dir(src, partner)
@@ -497,7 +497,7 @@
 
 			set_is_fucking(partner , GRINDING_MOUTH_WITH_FEET)
 
-		playsound(loc, "lewd/sound/interactions/foot_wet[rand(1, 3)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/foot_wet[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		partner.handle_post_sex(1, null, src)
 		partner.dir = get_dir(src, partner)
@@ -533,7 +533,7 @@
 /obj/item/dildo
 	name = "dildo"
 	desc = "Hmmm, deal throw."
-	icon = 'lewd/icons/obj/items/dildo.dmi'
+	icon = 'code/game/lewd/icons/obj/items/dildo.dmi'
 	icon_state = "dildo"
 	item_state = "c_tube"
 	throwforce = 0
@@ -555,7 +555,7 @@
 	if(message)
 		user.visible_message("<font color=purple><b>[user]</b> [message].</font>")
 		M.handle_post_sex(pick(3,4,5,6,7), null, user)
-		playsound(loc, "lewd/sound/interactions/bang[rand(4, 6)].ogg", 70, 1, -1)
+		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(4, 6)].ogg", 70, 1, -1)
 	else
 		to_chat(user, "<span class='notice'>You aren't allowed to have fun.</span>")
 		return ..()
@@ -600,7 +600,7 @@
 	gender = PLURAL
 	layer = ABOVE_NORMAL_TURF_LAYER
 	density = 0
-	icon = 'lewd/icons/effects/cum.dmi'
+	icon = 'code/game/lewd/icons/effects/cum.dmi'
 	random_icon_states = list("cum1", "cum3", "cum4", "cum5", "cum6", "cum7", "cum8", "cum9", "cum10", "cum11", "cum12")
 	mergeable_decal = FALSE
 	blood_state = null

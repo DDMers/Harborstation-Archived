@@ -13,12 +13,12 @@
 
 // Rectum? Damn near killed 'em.
 var/list/interactions
-
+/*
 /mob/living/carbon/human/ShiftClick(mob/user)
 	. = ..()
 	if(user in orange(src, 1) && isliving(user))
 		user.try_interaction(src)
-
+*/
 /mob/verb/interact_with()
 	set name = "Interact With"
 	set desc = "Perform an interaction with someone."

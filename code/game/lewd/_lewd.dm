@@ -79,7 +79,7 @@
 
 /datum/interaction/lewd/evaluate_user(mob/user, silent = TRUE)
 	if(..(user, silent))
-		if(user_not_tired && user.refactory_period)
+		if(user_not_tired && user.refactory_period >= 1)
 			to_chat(user, "<span class='warning'>You're still exhausted from the last time.</span>")
 			return FALSE
 		if(require_user_naked && !user.is_nude())
@@ -103,7 +103,7 @@
 
 /datum/interaction/lewd/evaluate_target(mob/user, mob/target, silent = TRUE)
 	if(..(user, target, silent))
-		if(target_not_tired && target.refactory_period)
+		if(target_not_tired && target.refactory_period >= 1)
 			to_chat(user, "<span class='warning'>They're still exhausted from the last time.</span>")
 			return FALSE
 		if(require_target_naked && !target.is_nude())
