@@ -84,16 +84,28 @@ fish
 
 /obj/item/zombie_hand/fish/attack_self(mob/user)
 	var/turf/t = get_turf(user)
-	if(!istype(t, /turf/open/floor/plating/beach/water))
-		if(!istype(t, /turf/open/floor/plating/ashplanet/wateryrock))
-			to_chat(user, "YOU CANT SWIM HERE THIS ISNT WATER!!!")
-			return
+	var/user_x = t.x
+	var/user_y = t.y
+
 	if(user.z == 2)
-		to_chat(user, "You swim down")
-		user.z = 3
+		if(istype(t, /turf/open/floor/plating/beach/water))// >swimming on rock
+			to_chat(user, "<span class='notice'>You swim down</span>")
+			user.z = 3
+		else
+			to_chat(user, "<span class='warning'>YOU CANT SWIM HERE THIS ISNT WATER!!!</span>")
+			return
+
+	else if(user.z == 3)
+		var/turf/T2 = locate(user_x, user_y, 2)
+
+		if(istype(T2, /turf/open/floor/plating/beach/water) || istype(T2, /turf/open/floor/plating/ashplanet/wateryrock))
+			to_chat(user, "<span class='notice'>You swim up!</span>")
+			user.z = 2
+		else
+			to_chat(user, "<span class='warning'>YOU CANT SWIM UP HERE THIS ISNT WATER!!!</span>")
+			return
 	else
-		to_chat(user, "You swim up!")
-		user.z = 2
+		to_chat(user, "<span class='warning'>wait how did you got into z[num2text(user.z)]?</span>")
 
 /obj/item/clothing/suit/space/hardsuit/carp/foiosh
 	name = "fish skin"

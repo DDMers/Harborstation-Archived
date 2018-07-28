@@ -19,13 +19,6 @@
 /mob/var/multiorgasms = 0
 /mob/var/refactory_period = 0
 
-/mob/living/carbon/human/pickpotency()
-	if(sexual_potency < 1)
-		pickpotency()
-
-/mob/proc/pickpotency()
-	sexual_potency = pick(12,13,14,15,16,17)
-
 /mob/list_interaction_attributes()
 	var/dat = ..()
 	if(refactory_period)

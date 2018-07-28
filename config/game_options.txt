@@ -241,7 +241,7 @@ MAX_TICKETS_PER_ROLL 100
 
 ## RANDOM EVENTS ###
 ## Comment this out to disable random events during the round.
-ALLOW_RANDOM_EVENTS
+#ALLOW_RANDOM_EVENTS
 
 ## Multiplier for earliest start time of dangerous events.
 ## Set to 0 to make dangerous events avaliable from round start.
@@ -431,7 +431,7 @@ ROUNDSTART_RACES plasmaman
 ##-------------------------------------------------------------------------------------------
 
 ## Uncomment to give players the choice of joining as a human with mutant bodyparts before they join the game
-#JOIN_WITH_MUTANT_HUMANS
+JOIN_WITH_MUTANT_HUMANS
 
 ##Overflow job. Default is assistant
 OVERFLOW_JOB Assistant
@@ -484,10 +484,10 @@ BOMBCAP 20
 ## a less lootfilled or smaller or less round effecting ruin costs less to
 ## spawn, while the converse is true. Alter this number to affect the amount
 ## of ruins.
-LAVALAND_BUDGET 60
+LAVALAND_BUDGET 0
 
 ## Space Ruin Budged
-Space_Budget 16
+Space_Budget 0
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
 ## Must be at least 30. At least 55 recommended to be visually/aurally appropriate
@@ -501,13 +501,13 @@ ARRIVALS_SHUTTLE_DOCK_WINDOW 55
 
 ## How many wirechewing rodents you want to spawn on exposed maintenane wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
 
-MICE_ROUNDSTART 10
+MICE_ROUNDSTART 0
 
 ## If the percentage of players alive (doesn't count conversions) drops below this threshold the emergency shuttle will be forcefully called (provided it can be)
 #EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
 
 ## Determines if players are allowed to print integrated circuits, uncomment to allow.
-#IC_PRINTING
+IC_PRINTING
 
 ## Uncomment to allow roundstart quirk selection in the character setup menu.
 ## This used to be named traits, hence the config name, but it handles quirks, not the other kind of trait!

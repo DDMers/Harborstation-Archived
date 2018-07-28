@@ -227,7 +227,7 @@
 "es" = (/obj/effect/landmark/start/detective,/turf/open/floor/plasteel,/area/awaymission/beach)
 "et" = (/obj/effect/turf_decal/bot,/obj/machinery/button/door{id = "XCCsec4"; name = "Ball Entry 2a"; pixel_x = 24; pixel_y = -8; req_access_txt = "2"},/obj/machinery/button/door{id = "XCCcent2"; name = "Ball Entry 1a"; pixel_x = 24; pixel_y = 8; req_access_txt = "2"},/obj/structure/table/reinforced,/obj/machinery/recharger,/obj/machinery/button/flasher{id = "secentranceflasher"; name = "Flash Control"; pixel_x = 40; pixel_y = 8; req_access_txt = "1"},/turf/open/floor/plasteel/red/side{dir = 4},/area/awaymission/beach)
 "eu" = (/turf/closed/indestructible,/area/awaymission/beach)
-"ev" = (/obj/machinery/telecomms/processor/preset_one,/obj/machinery/camera{c_tag = "Telecomms - Server Room - Fore-Port"; dir = 2; network = list("ss13","tcomms")},/obj/machinery/light{dir = 1},/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
+"ev" = (/obj/machinery/telecomms/processor/preset_one,/obj/machinery/camera{c_tag = "Telecomms - Server Room - Fore-Port"; dir = 2; network = list("ss13","tcomms")},/obj/machinery/light{dir = 1},/turf/open/floor/circuit/green,/area/awaymission/beach)
 "ew" = (/obj/effect/turf_decal/bot,/obj/machinery/button/door{id = "XCCsec45"; name = "Ball Entry 2b"; pixel_x = -24; pixel_y = -8; req_access_txt = "2"},/obj/machinery/button/door{id = "XCCSec456"; name = "Ball Entry 1b"; pixel_x = -24; pixel_y = 8; req_access_txt = "2"},/obj/structure/table/reinforced,/obj/machinery/recharger,/obj/machinery/button/flasher{id = "secentranceflasher2"; name = "Flash Control"; pixel_x = -40; pixel_y = 8; req_access_txt = "1"},/turf/open/floor/plasteel/red/side{dir = 8},/area/awaymission/beach)
 "ex" = (/obj/item/twohanded/required/kirbyplants{icon_state = "plant-14"},/turf/open/floor/plasteel/red/side{dir = 8},/area/awaymission/beach)
 "ey" = (/obj/structure/table/reinforced,/obj/machinery/recharger,/turf/open/floor/plasteel/red,/area/awaymission/beach)
@@ -625,44 +625,44 @@
 "ma" = (/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 5},/area/awaymission/beach)
 "mb" = (/obj/effect/landmark/start/cook,/turf/open/floor/plasteel/white,/area/awaymission/beach)
 "mc" = (/turf/open/floor/plating/beach/coastline_t/sandwater_inner,/area/awaymission/beach)
-"md" = (/obj/structure/showcase/cyborg/old{dir = 2; pixel_y = 20},/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/awaymission/beach)
-"me" = (/obj/machinery/telecomms/receiver/preset_left,/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
-"mf" = (/obj/machinery/telecomms/hub/preset,/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
-"mg" = (/obj/machinery/telecomms/receiver/preset_right,/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
-"mh" = (/obj/machinery/telecomms/processor/preset_three,/obj/machinery/camera{c_tag = "Telecomms - Server Room - Fore-Starboard"; dir = 2; network = list("ss13","tcomms")},/obj/machinery/light{dir = 1},/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
+"md" = (/obj/structure/showcase/cyborg/old{dir = 2; pixel_y = 20},/turf/open/floor/plasteel/dark,/area/awaymission/beach)
+"me" = (/obj/machinery/telecomms/receiver/preset_left,/turf/open/floor/circuit/green,/area/awaymission/beach)
+"mf" = (/obj/machinery/telecomms/hub/preset,/turf/open/floor/circuit/green,/area/awaymission/beach)
+"mg" = (/obj/machinery/telecomms/receiver/preset_right,/turf/open/floor/circuit/green,/area/awaymission/beach)
+"mh" = (/obj/machinery/telecomms/processor/preset_three,/obj/machinery/camera{c_tag = "Telecomms - Server Room - Fore-Starboard"; dir = 2; network = list("ss13","tcomms")},/obj/machinery/light{dir = 1},/turf/open/floor/circuit/green,/area/awaymission/beach)
 "mi" = (/obj/machinery/computer/telecomms/monitor{icon_state = "computer"; dir = 4},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "mj" = (/obj/effect/turf_decal/sand,/obj/effect/landmark/start/janitor,/turf/open/floor/plasteel/white,/area/awaymission/beach)
 "mk" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "ml" = (/obj/structure/table/wood,/obj/item/radio/off{pixel_y = 4},/obj/item/screwdriver{pixel_y = 10},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "mm" = (/obj/structure/table/wood,/obj/item/folder/blue,/obj/item/folder/blue,/obj/item/pen,/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "mn" = (/obj/item/twohanded/required/kirbyplants{icon_state = "plant-21"},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
-"mo" = (/obj/machinery/telecomms/bus/preset_one,/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
-"mp" = (/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/awaymission/beach)
-"mq" = (/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
-"mr" = (/turf/open/floor/circuit/green/telecomms,/area/awaymission/beach)
-"ms" = (/obj/machinery/telecomms/bus/preset_three,/turf/open/floor/circuit/green/telecomms/mainframe,/area/awaymission/beach)
+"mo" = (/obj/machinery/telecomms/bus/preset_one,/turf/open/floor/circuit/green,/area/awaymission/beach)
+"mp" = (/turf/open/floor/circuit/green,/area/awaymission/beach)
+"mq" = (/obj/machinery/telecomms/bus/preset_three,/turf/open/floor/circuit/green,/area/awaymission/beach)
+"mr" = (/obj/machinery/telecomms/bus/preset_two,/turf/open/floor/circuit,/area/awaymission/beach)
+"ms" = (/obj/machinery/telecomms/processor/preset_two,/turf/open/floor/circuit,/area/awaymission/beach)
 "mt" = (/obj/machinery/computer/message_monitor{dir = 4},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "mu" = (/obj/structure/chair/office/dark{dir = 8},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
-"mv" = (/turf/open/floor/plasteel/dark/telecomms,/area/awaymission/beach)
+"mv" = (/obj/machinery/blackbox_recorder,/turf/open/floor/circuit,/area/awaymission/beach)
 "mw" = (/obj/machinery/computer/telecomms/server{icon_state = "computer"; dir = 4},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "mx" = (/obj/machinery/microwave{pixel_y = 4},/obj/structure/table/wood,/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
-"my" = (/obj/machinery/telecomms/bus/preset_two,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mz" = (/obj/machinery/telecomms/processor/preset_two,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mA" = (/obj/machinery/blackbox_recorder,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mB" = (/obj/machinery/ntnet_relay,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mC" = (/obj/machinery/telecomms/processor/preset_four,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mD" = (/obj/machinery/telecomms/bus/preset_four,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
+"my" = (/obj/machinery/ntnet_relay,/turf/open/floor/circuit,/area/awaymission/beach)
+"mz" = (/obj/machinery/telecomms/processor/preset_four,/turf/open/floor/circuit,/area/awaymission/beach)
+"mA" = (/obj/machinery/telecomms/bus/preset_four,/turf/open/floor/circuit,/area/awaymission/beach)
+"mB" = (/obj/machinery/telecomms/server/presets/common,/turf/open/floor/circuit,/area/awaymission/beach)
+"mC" = (/obj/machinery/telecomms/server/presets/engineering,/turf/open/floor/circuit,/area/awaymission/beach)
+"mD" = (/obj/machinery/telecomms/message_server,/turf/open/floor/circuit,/area/awaymission/beach)
 "mE" = (/obj/item/storage/box/donkpockets,/obj/structure/table/wood,/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "mF" = (/obj/structure/lattice/catwalk,/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
-"mG" = (/obj/machinery/telecomms/server/presets/common,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
+"mG" = (/obj/structure/table/glass,/obj/item/folder{pixel_y = 2},/obj/item/folder{pixel_y = 2},/obj/item/pen,/turf/open/floor/circuit,/area/awaymission/beach)
 "mH" = (/obj/machinery/light{dir = 8},/turf/open/floor/holofloor/beach,/area/awaymission/beach)
-"mI" = (/obj/machinery/telecomms/server/presets/engineering,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mJ" = (/obj/machinery/telecomms/message_server,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mK" = (/obj/structure/table/glass,/obj/item/folder{pixel_y = 2},/obj/item/folder{pixel_y = 2},/obj/item/pen,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
+"mI" = (/obj/machinery/telecomms/server/presets/science,/turf/open/floor/circuit,/area/awaymission/beach)
+"mJ" = (/obj/machinery/telecomms/server/presets/medical,/turf/open/floor/circuit,/area/awaymission/beach)
+"mK" = (/obj/machinery/telecomms/broadcaster/preset_left,/obj/machinery/light,/turf/open/floor/circuit,/area/awaymission/beach)
 "mL" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "0-8"},/obj/machinery/power/solar,/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
 "mM" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable/yellow{icon_state = "2-4"},/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
-"mN" = (/obj/machinery/telecomms/server/presets/science,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
-"mO" = (/obj/machinery/telecomms/server/presets/medical,/turf/open/floor/circuit/telecomms/server,/area/awaymission/beach)
+"mN" = (/obj/machinery/telecomms/server/presets/command,/turf/open/floor/circuit,/area/awaymission/beach)
+"mO" = (/obj/machinery/telecomms/server/presets/security,/turf/open/floor/circuit,/area/awaymission/beach)
 "mP" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "0-8"},/obj/machinery/power/tracker,/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
 "mQ" = (/turf/open/floor/plasteel/dark,/area/awaymission/beach)
 "mR" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable/yellow{icon_state = "2-4"},/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
@@ -673,8 +673,8 @@
 "mW" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "4-8"},/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 4},/area/awaymission/beach)
 "mX" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "4-8"},/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
 "mY" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable/yellow{icon_state = "1-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
-"mZ" = (/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plasteel/dark/telecomms,/area/awaymission/beach)
-"na" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel/dark/telecomms,/area/awaymission/beach)
+"mZ" = (/obj/machinery/power/apc{areastring = "/area/ai_monitored/storage/satellite"; dir = 2; name = "Telecomms APC"; pixel_y = -26},/obj/structure/cable,/turf/open/floor/plasteel/dark,/area/awaymission/beach)
+"na" = (/obj/machinery/telecomms/server/presets/service,/turf/open/floor/circuit,/area/awaymission/beach)
 "nb" = (/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/holofloor/beach,/area/awaymission/beach)
 "nc" = (/obj/structure/lattice/catwalk,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "1-8"},/obj/structure/cable/yellow{icon_state = "1-4"},/turf/open/floor/holofloor/beach/water,/area/awaymission/beach)
 "nd" = (/obj/machinery/door/airlock/hatch{name = "Telecomms Server Room"},/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 4},/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel/dark,/area/awaymission/beach)
@@ -683,17 +683,14 @@
 "ng" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "nh" = (/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "ni" = (/obj/item/folder,/obj/item/folder,/obj/structure/table/wood,/obj/item/pen,/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
-"nj" = (/obj/machinery/telecomms/broadcaster/preset_left,/obj/machinery/light,/turf/open/floor/circuit/telecomms/mainframe,/area/awaymission/beach)
-"nk" = (/obj/machinery/telecomms/server/presets/command,/turf/open/floor/circuit/telecomms/mainframe,/area/awaymission/beach)
-"nl" = (/obj/machinery/telecomms/server/presets/security,/turf/open/floor/circuit/telecomms/mainframe,/area/awaymission/beach)
-"nm" = (/obj/machinery/power/apc{areastring = "/area/ai_monitored/storage/satellite"; dir = 2; name = "Telecomms APC"; pixel_y = -26},/obj/structure/cable,/turf/open/floor/plasteel/dark/telecomms,/area/awaymission/beach)
-"nn" = (/obj/machinery/telecomms/server/presets/service,/turf/open/floor/circuit/telecomms/mainframe,/area/awaymission/beach)
-"no" = (/obj/machinery/telecomms/server/presets/supply,/turf/open/floor/circuit/telecomms/mainframe,/area/awaymission/beach)
-"np" = (/obj/machinery/telecomms/broadcaster/preset_right,/obj/machinery/light,/turf/open/floor/circuit/telecomms/mainframe,/area/awaymission/beach)
+"nj" = (/obj/machinery/telecomms/server/presets/supply,/turf/open/floor/circuit,/area/awaymission/beach)
+"nk" = (/obj/machinery/telecomms/broadcaster/preset_right,/obj/machinery/light,/turf/open/floor/circuit,/area/awaymission/beach)
+"nl" = (/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/apc{areastring = "/area/ai_monitored/storage/satellite"; dir = 2; name = "Telecomms control APC"; pixel_y = -26},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
+"nm" = (/turf/open/floor/plasteel,/area/awaymission/beach/secretbar)
+"nn" = (/turf/open/floor/plasteel,/area/space)
 "nq" = (/obj/structure/cable/yellow{icon_state = "4-8"},/turf/open/floor/holofloor/beach,/area/awaymission/beach)
 "nr" = (/obj/structure/cable/yellow{icon_state = "1-8"},/turf/open/floor/holofloor/beach,/area/awaymission/beach)
 "ns" = (/obj/machinery/light,/turf/open/floor/plasteel/dark,/area/awaymission/beach)
-"nt" = (/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/apc{areastring = "/area/ai_monitored/storage/satellite"; dir = 2; name = "Telecomms APC"; pixel_y = -26},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "nu" = (/obj/structure/cable{icon_state = "2-8"},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/grimy,/area/awaymission/beach)
 "nv" = (/obj/machinery/door/airlock/hatch{name = "Telecomms Control Room"; req_one_access_txt = "19; 61"},/turf/open/floor/plasteel/dark,/area/awaymission/beach)
 "nw" = (/obj/structure/closet/crate,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/rods/fifty,/obj/item/stack/sheet/glass/fifty,/obj/item/electronics/airlock,/obj/item/electronics/airlock,/obj/item/stock_parts/cell/high{charge = 100; maxcharge = 15000},/obj/item/stack/sheet/mineral/plasma{amount = 30},/obj/item/gps,/turf/open/floor/plating,/area/awaymission/beach)
@@ -723,7 +720,6 @@
 "nU" = (/obj/structure/table,/obj/item/storage/belt,/obj/item/lightreplacer,/turf/open/floor/plasteel/dark,/area/awaymission/beach)
 "nV" = (/obj/structure/table,/turf/open/floor/plasteel/dark,/area/awaymission/beach)
 "nW" = (/turf/closed/wall,/area/awaymission/beach/secretbar)
-"nX" = (/turf/open/indestructible,/area/awaymission/beach/secretbar)
 "nY" = (/obj/structure/ladder/unbreakable{down = "Bar_Bottom"; height = 1; id = "Bar_Top"},/turf/open/indestructible,/area/awaymission/beach/secretbar)
 "nZ" = (/obj/machinery/door/airlock/wood,/obj/structure/barricade/wooden/crude,/turf/open/indestructible,/area/awaymission/beach/secretbar)
 "oa" = (/obj/effect/light_emitter{set_cap = 1; set_luminosity = 4},/turf/open/floor/plating/beach/sand,/area/awaymission/beach)
@@ -734,14 +730,14 @@
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaeueueueueueueueueueueueueueueuaDaDapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylyaoafagagagagagagagagagagagagagagagagagatagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
 aaeuevmdmemfmgmdmhaEmimkmlmmmneumHaDapajlylylDmMmLlylDmMmLlylDmMmLlylylylylylylylylylylylylylylyaoafagagagagagagagagatagatagatagatagagagatagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeumompmqmrmqmpmsaEmtmuaLaLaLaEaDaDapajlylylDmRmLlylDmRmLlylDmRmLlylylylylylylylylylylylylylylyaoafagagagagagatatatatagagagagagagagagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeumvmvmvmvmvmvmvaEmwaLaLaLmxaEaDaDapajlylylDmRmLlylDmRmLlylDmRmLlylylylylylylylylylylylylylylyaoafagagagaratatatjyatatagagagagagagagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeumymzmAmvmBmCmDaEaEaEaLaLmEaEaDaDapajlylylDmRmLlylDmRmLlylDmRmLlylylylylylylylylylylylylylylyaoafagagoaoaoaoboboboboaoaagagatagatagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeumGmImJmvmKmNmOaEmQaEaLaLmVaEaDaDapajlylynAmSnAlynAmSnAlynAmSnAlymFmFmFlylylylylylylylylylylyaoafagagoaagagagagagagagoaatagagatatatagagatagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeumvmvmvmZnananandnenfngnhnieuaDmTmUmWmXmXmXmYmXmXmXmYmXmXmXmYmXmXmXmPmFlylylylylylylylylylylyaoafagagoaagnWnWnWnWnWagoaagagatatatagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeunjnknlnmnnnonpaEnsaEntnuaLeumHnbapnBnAnAnAmSnAnAnAmSnAnAnAmSnAnAmFmFmFlylylylylylylylylylylyaoafagagoaagnWnXnYnXnWagoaagagatatatagagagatagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeueueueueueueueueueueueunveueuaDnbapajlylylDncmLlylDncmLlylDncmLlynAnAnAlylylylylylylylylylylyaoafagagoaagnWnXnXnXnWagobagatataragatagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
-aaeunwnynzeunDnEnEnenFnenenGnHeuaDnbapajlylylDncmLlylDncmLlylDncmLlylylylylylylylylylylylylylylyaoafagagoaagnWnXnXnXnWagoaagatagatagatagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeumomQmpmpmpmQmqaEmtmuaLaLaLaEaDaDapajlylylDmRmLlylDmRmLlylDmRmLlylylylylylylylylylylylylylylyaoafagagagagagatatatatagagagagagagagagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeumQmQmQmQmQmQmQaEmwaLaLaLmxaEaDaDapajlylylDmRmLlylDmRmLlylDmRmLlylylylylylylylylylylylylylylyaoafagagagaratatatjyatatagagagagagagagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeumrmsmvmQmymzmAaEaEaEaLaLmEaEaDaDapajlylylDmRmLlylDmRmLlylDmRmLlylylylylylylylylylylylylylylyaoafagagoaoaoaoboboboboaoaagagatagatagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeumBmCmDmQmGmImJaEmQaEaLaLmVaEaDaDapajlylynAmSnAlynAmSnAlynAmSnAlymFmFmFlylylylylylylylylylylyaoafagagoaagagagagagagagoaatagagatatatagagatagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeumQmQmQnDnenenendnenfngnhnieuaDmTmUmWmXmXmXmYmXmXmXmYmXmXmXmYmXmXmXmPmFlylylylylylylylylylylyaoafagagoaagnWnWnWnWnWagoaagagatatatagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeumKmNmOmZnanjnkaEnsaEnlnuaLeumHnbapnBnAnAnAmSnAnAnAmSnAnAnAmSnAnAmFmFmFlylylylylylylylylylylyaoafagagoaagnWnmnYnmnWagoaagagatatatagagagatagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeueueueueueueueueueueueunveueuaDnbapajlylylDncmLlylDncmLlylDncmLlynAnAnAlylylylylylylylylylylyaoafagagoaagnWnnnnnmnWagobagatataragatagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
+aaeunwnynzeunDnEnEnenFnenenGnHeuaDnbapajlylylDncmLlylDncmLlylDncmLlylylylylylylylylylylylylylylyaoafagagoaagnWnnnnnmnWagoaagatagatagatagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
 aaeunynynynInJnKnKnLnMnMnMnMnNnOnqnrapajlylylDncmLlylDncmLlylDncmLlylylylylylylylylylylylylylylyaoafagagoaagnWnWnZnWnWagoaagagagatagagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
 aaeunynynPeunQnRnQnSnTnUnVmQmQeumHaDapajlylylDnxmLlylDnxmLlylDnxmLlylylylylylylylylylylylylylylyaoafagagoaagagagagagagagoaagagagagagagagagagagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa
 aaeueueueueueueueueueuaEaEaEaEeuaiaiamajlylynAnAnAlynAnAnAlynAnAnAlylylylylylylylylylylylylylylyaoafagagoboaoaoboaoaoaoaoaagagagatagagagaragagapajlylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylylyaa

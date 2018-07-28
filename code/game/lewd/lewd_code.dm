@@ -222,6 +222,8 @@
 				partner.emote("chokes on \The [src]'s dick")
 				H.adjustOxyLoss(5)
 				playsound(loc, "lewd/sound/interactions/choke_f1.ogg", 70, 1, -1)
+			else
+				return
 		if(is_fucking(partner, CUM_TARGET_MOUTH))
 			message = "thrusts deeper into \the [partner]'s mouth and down their throat."
 
