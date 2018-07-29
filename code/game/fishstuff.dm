@@ -1,31 +1,6 @@
 /*
 fish
 */
-
-/mob/living/carbon/human/ShiftClick(mob/user)
-	. = ..()
-	if(user in orange(src, 1))
-		fuck(user, src)
-
-/mob/living/carbon/human/proc/fuck(mob/living/user, mob/living/target)
-	visible_message("[target] lays down as [user] starts to hump [target]")
-	to_chat(world, "<span class='userdanger'>[user] is ERPing with [target] in area [get_area(user)], KILL THEM</span>")
-	target.Knockdown(5)
-	sleep(5)
-	user.pixel_y += 5
-	user.pixel_x += 5
-	sleep(5)
-	user.pixel_y -= 10
-	user.pixel_x -= 10
-	sleep(5)
-
-	visible_message("<b>[user]</b> does a backflip as they conclude their erp")
-	var/obj/effect/decal/cleanable/flour/smemen = new(src.loc)
-	smemen.name = "white goo shit"
-	user.pixel_y = initial(user.pixel_y)
-	user.pixel_x = initial(user.pixel_x)
-	user.emote("flip")
-
 /obj/effect/mob_spawn/human/fisherman
 	name = "fisherman"
 	outfit = /datum/outfit/job/fisherman

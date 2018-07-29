@@ -3,12 +3,12 @@
   --------------------------------------------------
 */
 var/list/interactions
-/*
+
 /mob/living/carbon/human/ShiftClick(mob/user)
 	. = ..()
-	if(user in orange(src, 1) && isliving(user))
+	if(usr != src && !usr.restrained() && isliving(user))
 		user.try_interaction(src)
-*/
+
 
 /mob/living/verb/interact_with()
 	set name = "Interact With"
@@ -35,9 +35,9 @@ var/list/interactions
 
 /mob/living/proc/list_interaction_attributes(mob/living/user)
 	var/dat = ""
-	var/arms = user.get_num_arms()
-	if(arms > 0)
-		dat += "...have hands."
+
+	//if(user.has_hand())
+	dat += "...have hands."
 	if(!user.is_mouth_covered())
 		if(dat != "")
 			dat += "<br>"
@@ -91,25 +91,22 @@ var/list/interactions
 	var/needs_physical_contact
 
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE)
-	var/arms = user.get_num_arms()
-
 	if(require_user_mouth && user.is_mouth_covered())
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>Your mouth is covered.</span>")
 		return FALSE
-	if(require_user_hands && arms < 1)
+	if(require_user_hands && !user.has_hand())
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>You don't have hands.</span>")
 		return FALSE
 	return TRUE
 
 /datum/interaction/proc/evaluate_target(mob/living/user, mob/living/target, silent = TRUE)
-	var/arms = target.get_num_arms()
 	if(require_target_mouth && target.is_mouth_covered())
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
 		return FALSE
-	if(require_target_hands && arms < 1)
+	if(require_target_hands && !target.has_hand())
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>They don't have hands.</span>")
 		return FALSE

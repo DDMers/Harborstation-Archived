@@ -1,22 +1,3 @@
-/mob/living/proc/do_normalfuck(mob/living/partner) //does not require special admin perms
-	visible_message("<font color=purple>[partner] lays down as [src] starts to hump [partner]</font>")
-	to_chat(world, "<span class='userdanger'>[src] is ERPing with [partner] in [get_area(src)], KILL THEM</span>")
-	partner.fucked_amt += 1
-	src.fucking_someone_amt += 1
-	partner.Knockdown(5)
-
-	partner.dir = get_dir(partner,src)
-	do_fucking_animation(get_dir(src, partner))
-
-	sleep(5)
-	visible_message("<b>[src]</b> does a backflip as they conclude their erp")
-	//cum_splatter(partner)
-	var/obj/effect/decal/cleanable/flour/smemen = new(src.loc)
-	smemen.name = "white goo shit"
-	src.pixel_y = initial(src.pixel_y)
-	src.pixel_x = initial(src.pixel_x)
-	src.emote("flip")
-
 /* ------------------------------------------------
    -----------ACTUAL ERP CODE BELLOW---------------
    ------------------------------------------------ */
@@ -208,6 +189,29 @@
 		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
 		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 		partner.handle_post_sex(lust_increase, CUM_TARGET_ANUS, src)
+		handle_post_sex(lust_increase, null, partner)
+		partner.dir = get_dir(partner,src)
+		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
+
+	else
+		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
+
+/mob/living/proc/do_mountbreast(mob/living/partner)
+	var/message
+	var/lust_increase = 13
+
+	if(more_lewd_erp == TRUE)
+		if(partner.is_fucking(src, CUM_TARGET_BREASTS))
+			message = "[pick("presses their breasts onto \the [partner]'s dick", "forces \the [partner]'s cock on their breasts")]"
+		else
+			message = "lowers their breasts onto \the [partner]'s cock."
+			partner.set_is_fucking(src, CUM_TARGET_BREASTS)
+
+		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
+		visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
+		partner.handle_post_sex(lust_increase, CUM_TARGET_BREASTS, src)
 		handle_post_sex(lust_increase, null, partner)
 		partner.dir = get_dir(partner,src)
 		do_fucking_animation(get_dir(src, partner))

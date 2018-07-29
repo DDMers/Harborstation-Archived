@@ -48,16 +48,29 @@
 		L = get_equipped_items()
 	for(var/obj/item/I in L)
 		if(I.body_parts_covered & GROIN)
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
 /mob/living/proc/is_chest_exposed(var/list/L)
 	if(!L)
 		L = get_equipped_items()
 	for(var/obj/item/I in L)
 		if(I.body_parts_covered & CHEST)
-			return 0
-	return 1
+			return FALSE
+	return TRUE
+
+/mob/living/proc/has_hand()
+	/*
+	if(istype(src, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = src
+		if(H.get_bodypart(BODY_ZONE_R_ARM) || H.get_bodypart(BODY_ZONE_L_ARM))
+			return TRUE
+		else
+			return FALSE
+	else
+		return TRUE
+	*/
+	return TRUE
 
 /mob/living/proc/has_penis()
 	return (gender == MALE)
@@ -65,7 +78,7 @@
 /mob/living/proc/has_vagina()
 	return (gender == FEMALE)
 
-/mob/living/proc/has_breasts()
+/mob/living/proc/has_breast()
 	return (gender == FEMALE)
 
 /mob/living/proc/has_anus()
@@ -77,7 +90,7 @@
 		dat += "<br>...are sexually exhausted for the time being."
 	if(is_chest_exposed() && is_groin_exposed())
 		dat += "<br>...are naked."
-		if(has_breasts() && is_chest_exposed())
+		if(has_breast() && is_chest_exposed())
 			dat	+= "<br>...have breasts."
 		if(has_penis() && is_groin_exposed())
 			dat += "<br>...have a penis."
@@ -108,7 +121,6 @@
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
 	var/message
-	var/arms = partner.get_num_arms()
 
 	if(has_penis() && is_groin_exposed())
 		if(!istype(partner))
@@ -142,12 +154,12 @@
 				else
 					message = "cums on \the [partner]'s backside."
 			if(CUM_TARGET_HAND)
-				if(arms > 0)
+				if(partner.has_hand())
 					message = "cums in \the [partner]'s hand."
 				else
 					message = "cums on \the [partner]."
 			if(CUM_TARGET_BREASTS)
-				if(partner.is_chest_exposed() && partner.has_vagina())
+				if(partner.is_chest_exposed() && partner.has_breast())
 					message = "cums onto \the [partner]'s breasts."
 				else
 					message = "cums on \the [partner]'s chest and neck."
@@ -234,16 +246,17 @@
 	var/user_not_tired
 	var/target_not_tired
 
-	var/require_user_naked
 	var/require_target_naked
 
 	var/require_user_penis
 	var/require_user_anus
 	var/require_user_vagina
+	var/require_user_breast
 
 	var/require_target_penis
 	var/require_target_anus
 	var/require_target_vagina
+	var/require_target_breast
 
 	var/user_refactory_cost
 	var/target_refactory_cost
@@ -253,11 +266,27 @@
 		if(user_not_tired && user.refactory_period >= 1)
 			to_chat(user, "<span class='warning'>You're still exhausted from the last time.</span>")
 			return FALSE
-		if(require_user_naked && !user.is_groin_exposed() && !user.is_chest_exposed())
-			if(!silent)
-				to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
-			return FALSE
-		if(require_user_penis && !user.has_penis())
+		if(!user.is_chest_exposed())
+			if(require_user_breast && user.has_breast())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
+				return FALSE
+
+		if(!user.is_groin_exposed())
+			if(require_user_penis && user.has_penis())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
+				return FALSE
+			if(require_user_anus && user.has_anus())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
+				return FALSE
+			if(require_user_vagina && user.has_vagina())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
+				return FALSE
+
+		if(require_user_vagina && !user.has_vagina())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>You don't have a penis.</span>")
 			return FALSE
@@ -269,6 +298,10 @@
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>You don't have a vagina.</span>")
 			return FALSE
+		if(require_user_breast && !user.has_breast())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have breasts.</span>")
+			return FALSE
 		return TRUE
 	return FALSE
 
@@ -277,10 +310,25 @@
 		if(target_not_tired && target.refactory_period >= 1)
 			to_chat(user, "<span class='warning'>They're still exhausted from the last time.</span>")
 			return FALSE
-		if(require_target_naked && !target.is_groin_exposed() && !target.is_chest_exposed())
-			if(!silent)
-				to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
-			return FALSE
+
+		if(!target.is_chest_exposed())
+			if(require_target_breast && target.has_breast())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
+				return FALSE
+			if(require_target_penis && target.has_penis())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
+				return FALSE
+			if(require_target_vagina && target.has_anus())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
+				return FALSE
+			if(require_target_vagina && target.has_vagina())
+				if(!silent)
+					to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
+				return FALSE
+
 		if(require_target_penis && !target.has_penis())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have a penis.</span>")
@@ -292,6 +340,10 @@
 		if(require_target_vagina && !target.has_vagina())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have a vagina.</span>")
+			return FALSE
+		if(require_target_breast && !target.has_breast())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>They don't have breasts.</span>")
 			return FALSE
 		return TRUE
 	return FALSE

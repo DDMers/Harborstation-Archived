@@ -28,7 +28,7 @@
 	require_target_vagina = TRUE
 	interaction_sound = null
 	user_not_tired = TRUE
-	require_target_naked = TRUE
+//	require_target_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/oral/display_interaction(mob/living/user, mob/living/target)
@@ -48,8 +48,8 @@
 	require_target_vagina = TRUE
 	interaction_sound = null
 	user_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
+//	require_user_naked = TRUE
+//	require_target_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/fuck/display_interaction(mob/living/user, mob/living/target)
@@ -72,7 +72,7 @@
 	require_target_vagina = TRUE
 	interaction_sound = null
 	user_not_tired = TRUE
-	require_target_naked = TRUE
+//	require_target_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/finger/display_interaction(mob/living/user, mob/living/target)
@@ -99,7 +99,7 @@
 	interaction_sound = null
 	require_target_mouth = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+//	require_user_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/facefuck/display_interaction(mob/living/user, mob/living/target)
@@ -112,7 +112,7 @@
 	require_user_penis = TRUE
 	require_target_mouth = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+//	require_user_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/target)
@@ -125,7 +125,7 @@
 	require_user_hands = TRUE
 	require_target_penis = TRUE
 	target_not_tired = TRUE
-	require_target_naked = TRUE
+//	require_target_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/handjob/display_interaction(mob/living/user, mob/living/target)
@@ -137,9 +137,9 @@
 	interaction_sound = null
 	require_user_penis = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
-	require_target_vagina = TRUE
+//	require_user_naked = TRUE
+//	require_target_naked = TRUE
+	require_target_breast = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, mob/living/target)
@@ -153,8 +153,8 @@
 	require_target_penis = TRUE
 	user_not_tired = TRUE
 	target_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
+//	require_user_naked = TRUE
+//	require_target_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/mount/display_interaction(mob/living/user, mob/living/target)
@@ -169,12 +169,25 @@
 	require_target_penis = TRUE
 	user_not_tired = TRUE
 	target_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
+//	require_user_naked = TRUE
+//	require_target_naked = TRUE
 	max_distance = 1
 
-/datum/interaction/lewd/mountass/display_interaction(mob/living/user, mob/living/target)
-	user.do_mountass(target)
+/datum/interaction/lewd/mountbreast
+	command = "mountb"
+	description = "Mount with your breast."
+	interaction_sound = null
+	require_user_vagina = FALSE
+	require_target_penis = TRUE
+	user_not_tired = TRUE
+	target_not_tired = TRUE
+//	require_user_naked = TRUE
+//	require_target_naked = TRUE
+	require_user_breast = TRUE
+	max_distance = 1
+
+/datum/interaction/lewd/mountbreast/display_interaction(mob/living/user, mob/living/target)
+	user.do_mountbreast(target)
 
 /datum/interaction/lewd/rimjob
 	command = "rimjob"
@@ -183,7 +196,7 @@
 	require_user_mouth = TRUE
 	require_target_anus = TRUE
 	user_not_tired = TRUE
-	require_target_naked = TRUE
+//	require_target_naked = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/rimjob/display_interaction(mob/living/user, mob/living/target)
@@ -196,22 +209,11 @@
 	require_target_mouth = TRUE
 	require_user_anus = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+//	require_user_naked = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/mountface/display_interaction(mob/living/user, mob/living/target)
 	user.do_mountface(target)
-
-/datum/interaction/lewd/fuck
-	command = "erp button"
-	description = "erp button."
-	interaction_sound = null
-	user_not_tired = FALSE
-	max_distance = 1
-
-/datum/interaction/lewd/fuck/display_interaction(mob/living/user, mob/living/target)
-	user.do_normalfuck(target)
-
 
 /datum/interaction/lewd/lickfeet
 	command = "lickfeet"
