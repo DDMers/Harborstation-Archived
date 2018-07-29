@@ -19,7 +19,7 @@
 
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user, more_lewd_erp)
 	var/message = ""
-	if(istype(M, /mob/living/carbon/human) && user.zone_selected == "groin" && M.is_nude() && more_lewd_erp == TRUE)
+	if(istype(M, /mob/living/carbon/human) && user.zone_selected == "groin" && M.is_groin_exposed() && more_lewd_erp == TRUE)
 		if (hole == CUM_TARGET_VAGINA && M.has_vagina())
 			message = (user == M) ? pick("fucks their own pussy with \the [src]","shoves the [src] into their pussy", "jams the [src] into their pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
 		else if (hole == CUM_TARGET_ANUS && M.has_anus())

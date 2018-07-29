@@ -16,7 +16,7 @@ var/list/interactions
 	set category = "IC"
 	set src in view()
 
-	if(usr != src && !usr.restrained() && isliving(usr)) //*dab
+	if(usr != src && !usr.restrained() && isliving(usr))
 		usr.try_interaction(src)
 
 	if(!isliving(usr))
@@ -30,14 +30,14 @@ var/list/interactions
 			var/datum/interaction/I = new itype()
 			interactions[I.command] = I
 
-/mob/living/proc/try_interaction()
+/mob/proc/try_interaction()
 	return
 
 /mob/living/proc/list_interaction_attributes(mob/living/user)
 	var/dat = ""
 	if(user.get_num_arms() > 0)
 		dat += "...have hands."
-	if(!user.wear_mask)
+	if(!user.is_mouth_covered())
 		if(dat != "")
 			dat += "<br>"
 		dat += "...have a mouth, which is uncovered."
@@ -90,11 +90,10 @@ var/list/interactions
 	var/needs_physical_contact
 
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE)
-	if(require_user_mouth)
-		if(!user.wear_mask)
-			if(!silent)
-				to_chat(user, "<span class = 'warning'>Your mouth is covered.</span>")
-			return FALSE
+	if(require_user_mouth && user.is_mouth_covered())
+		if(!silent)
+			to_chat(user, "<span class = 'warning'>Your mouth is covered.</span>")
+		return FALSE
 	if(require_user_hands && user.get_num_arms() < 1)
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>You don't have hands.</span>")
@@ -102,11 +101,10 @@ var/list/interactions
 	return TRUE
 
 /datum/interaction/proc/evaluate_target(mob/living/user, mob/living/target, silent = TRUE)
-	if(require_target_mouth)
-		if(!target.wear_mask)
-			if(!silent)
-				to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
-			return FALSE
+	if(require_target_mouth && target.is_mouth_covered())
+		if(!silent)
+			to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
+		return FALSE
 	if(require_target_hands && target.get_num_arms() < 1)
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>They don't have hands.</span>")
@@ -115,7 +113,7 @@ var/list/interactions
 
 /datum/interaction/proc/get_action_link_for(mob/living/user, mob/living/target)
 	return "<a href='?src=\ref[src];action=1;action_user=\ref[user];action_target=\ref[target]'>[description]</a><br>"
-		//pls dont abuse this href! thanks
+
 /datum/interaction/Topic(href, href_list)
 	if(..())
 		return TRUE

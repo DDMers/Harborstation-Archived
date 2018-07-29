@@ -5,14 +5,10 @@
 	src.fucking_someone_amt += 1
 	partner.Knockdown(5)
 
-	sleep(5)
-	src.pixel_y += 5
-	src.pixel_x += 5
-	sleep(5)
-	src.pixel_y -= 10
-	src.pixel_x -= 10
-	sleep(5)
+	partner.dir = get_dir(partner,src)
+	do_fucking_animation(get_dir(src, partner))
 
+	sleep(5)
 	visible_message("<b>[src]</b> does a backflip as they conclude their erp")
 	//cum_splatter(partner)
 	var/obj/effect/decal/cleanable/flour/smemen = new(src.loc)
@@ -31,7 +27,7 @@
 
 	if(more_lewd_erp == TRUE)
 		if(partner.is_fucking(src, CUM_TARGET_MOUTH))
-			if(prob(partner.sexual_potency))
+			if(prob(partner.sexual_potency * 0.5))
 				partner.adjustOxyLoss(3)
 				message = "goes in deep on \the [partner]."
 				lust_increase += 5
@@ -56,6 +52,9 @@
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src)
 		partner.dir = get_dir(partner,src)
 		do_fucking_animation(get_dir(src, partner))
+		lust_increase = NORMAL_LUST //reset
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
@@ -89,6 +88,8 @@
 		handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
 		partner.dir = get_dir(partner,src)
 		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
@@ -100,13 +101,15 @@
 	if(more_lewd_erp == TRUE)
 		if(is_fucking(partner, CUM_TARGET_THROAT))
 			message = "[pick("brutally fucks \the [partner]'s throat.", "chokes \the [partner] on their dick.", "brutally shoves their dick deep into \the [partner]'s mouth.")]"
-			if(prob(partner.sexual_potency))
+			if(prob(partner.sexual_potency * 0.6))
 				partner.emote("chokes on \The [src]'s dick")
 				partner.adjustOxyLoss(5)
-				//playsound(loc, "lewd/sound/interactions/choke_f1.ogg", 70, 1, -1)
+				playsound(loc, "lewd/sound/interactions/choke_f1.ogg", 70, 1, -1)
+				lust_increase += 5
+			else
+				partner.emote("gasps")
 		if(is_fucking(partner, CUM_TARGET_MOUTH))
 			message = "thrusts deeper into \the [partner]'s mouth and down their throat."
-
 		else
 			message = "forces their dick deep down \the [partner]'s throat"
 			set_is_fucking(partner , CUM_TARGET_THROAT)
@@ -116,6 +119,9 @@
 		handle_post_sex(lust_increase, CUM_TARGET_THROAT, partner)
 		partner.dir = get_dir(partner,src)
 		do_fucking_animation(get_dir(src, partner))
+		lust_increase = 12 //shitty reset thingyv
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
 
@@ -136,6 +142,8 @@
 		partner.handle_post_sex(lust_increase, null, src)
 		partner.dir = get_dir(src, partner)
 		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
@@ -157,6 +165,8 @@
 		partner.handle_post_sex(lust_increase, null, src)
 		partner.dir = get_dir(partner,src)
 		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
@@ -178,6 +188,8 @@
 		handle_post_sex(lust_increase, null, partner)
 		partner.dir = get_dir(partner,src)
 		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
@@ -199,6 +211,8 @@
 		handle_post_sex(lust_increase, null, partner)
 		partner.dir = get_dir(partner,src)
 		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
@@ -210,6 +224,8 @@
 		partner.handle_post_sex(NORMAL_LUST, null, src)
 		partner.dir = get_dir(partner, src)
 		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
@@ -221,6 +237,8 @@
 		partner.handle_post_sex(NORMAL_LUST, null, src)
 		partner.dir = get_dir(partner, src)
 		do_fucking_animation(get_dir(src, partner))
+		partner.fucked_amt += 1
+		src.fucking_someone_amt += 1
 	else
 		to_chat(src, "<span class='notice'>You dont have admin erp permission.</span>")
 

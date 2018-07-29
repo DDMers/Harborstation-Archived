@@ -12,49 +12,36 @@
 #define LOW_LUST 1
 
 /*--------------------------------------------------
-  ---------------SPECIES STUFF----------------------
-  --------------------------------------------------
- */
- /*
-/datum/species
-	var/has_genitals = TRUE
-	var/has_anus = TRUE
-	var/has_breasts = TRUE
-
-/datum/species/proc/has_penis(var/mob/living/carbon/human/H)
-	return has_genitals && (H.gender == MALE)
-
-/datum/species/proc/has_vagina(var/mob/living/carbon/human/H)
-	return has_genitals && (H.gender == FEMALE)
-
-/datum/species/proc/has_breasts(var/mob/living/carbon/human/H)
-	return has_genitals && (H.gender == FEMALE)
-
-/datum/species/proc/has_anus(var/mob/living/carbon/human/H)
-	return has_anus
-*/
-
-/*--------------------------------------------------
   -------------------MOB STUFF----------------------
   --------------------------------------------------
  */
 /mob/living
+	var/more_lewd_erp = TRUE //tell admins if you want to erp, set this to 1
 	var/sexual_potency = 0
 	var/lust_tolerance = 100
 	var/lust = 0
 	var/multiorgasms = 0
 	var/refactory_period = 0
 	var/lastmoan
-	var/more_lewd_erp = TRUE //tell admins if you want to erp, set this to 1
-	var/fucked_amt = 0 //important vv reasons
-	var/fucking_someone_amt = 0
+	var/moan
 	var/last_partner
 	var/last_orifice
+	var/fucked_amt = 0 //important vv reasons
+	var/fucking_someone_amt = 0
 
 /mob/living/carbon/human/New()
 	. = ..()
 	sexual_potency = (prob(80) ? rand(9, 17) : pick(rand(5, 13), rand(15, 25)))
 	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+
+/mob/living/Life()
+	if(fucked_amt == 150)
+		to_chat(world, "<span class='userdanger'><b>[src]</b> has been fucked [fucked_amt] times.</span>")
+
+	if(refactory_period)
+		refactory_period--
+	return
+		..()
 
 /mob/living/proc/is_groin_exposed(var/list/L)
 	if(!L)
@@ -64,7 +51,7 @@
 			return 0
 	return 1
 
-/mob/living/carbon/proc/is_chest_exposed(var/list/L)
+/mob/living/proc/is_chest_exposed(var/list/L)
 	if(!L)
 		L = get_equipped_items()
 	for(var/obj/item/I in L)
@@ -88,7 +75,7 @@
 	var/dat = ..()
 	if(refactory_period >= 1)
 		dat += "<br>...are sexually exhausted for the time being."
-	if(is_nude() || is_chest_exposed() && is_groin_exposed())
+	if(is_chest_exposed() && is_groin_exposed())
 		dat += "<br>...are naked."
 		if(has_breasts() && is_chest_exposed())
 			dat	+= "<br>...have breasts."
@@ -102,26 +89,18 @@
 		dat += "<br>...are clothed."
 	return dat
 
-/mob/living/Life()
-	if(refactory_period)
-		refactory_period--
-	return
-		..()
-
-/proc/cum_splatter(target)
+/mob/proc/cum_splatter(target)
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
 	//C.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
 /mob/living/proc/moan()
-	var/moan = rand(1, 7)
-
 	if(!(prob(lust / lust_tolerance * 65)))
 		return
 	if(moan == lastmoan)
 		moan--
 	if(can_speak_vocal())
 		visible_message("<font color=purple><B>\The [src]</B> [pick("moans", "moans in pleasure",)].</font>")
-		playsound(get_turf(src), "code/game/lewd/sound/interactions/moan_[gender == FEMALE ? "f" : "m"][moan].ogg", 70, 1, 0)
+		playsound(get_turf(src), "code/game/lewd/sound/interactions/moan_[gender == FEMALE ? "f" : "m"][rand(1, 7)].ogg", 70, 1, 0)
 	if(!can_speak_vocal())
 		src.emote("<font color=purple><B>[src]</B> [pick("mimes a pleasured moan","moans in silence")].</font>")
 
@@ -136,38 +115,38 @@
 
 		switch(target_orifice)
 			if(CUM_TARGET_MOUTH)
-				if(partner.has_mouth() && partner.mouth_is_free())
+				if(partner.is_mouth_covered())
 					message = "cums right in \the [partner]'s mouth."
 					partner.reagents.add_reagent("cum", rand(8, 11))
 				else
 					message = "cums on \the [partner]'s face."
 					partner.reagents.add_reagent("cum", rand(2, 7))
 			if(CUM_TARGET_THROAT)
-				if(partner.has_mouth() && partner.mouth_is_free())
+				if(partner.is_mouth_covered())
 					message = "shoves deep into \the [partner]'s throat and cums."
 					partner.reagents.add_reagent("cum", rand(10, 16))
 				else
 					message = "cums on \the [partner]'s face."
 					partner.reagents.add_reagent("cum", rand(2, 7))
 			if(CUM_TARGET_VAGINA)
-				if(partner.is_nude() && partner.has_vagina())
+				if(partner.is_groin_exposed() && partner.has_vagina())
 					message = "cums in \the [partner]'s pussy."
-					partner.reagents.add_reagent("cum", rand(8, 14))
+					partner.reagents.add_reagent("cum", rand(10, 15))
 				else
 					message = "cums on \the [partner]'s belly."
 			if(CUM_TARGET_ANUS)
-				if(partner.is_nude() && partner.has_anus())
+				if(partner.is_groin_exposed() && partner.has_anus())
 					message = "cums in \the [partner]'s asshole."
-					partner.reagents.add_reagent("cum", rand(8, 14))
+					partner.reagents.add_reagent("cum", rand(10, 15))
 				else
 					message = "cums on \the [partner]'s backside."
 			if(CUM_TARGET_HAND)
-				if(partner.has_hand())
+				if(partner.get_num_arms() > 0)
 					message = "cums in \the [partner]'s hand."
 				else
 					message = "cums on \the [partner]."
 			if(CUM_TARGET_BREASTS)
-				if(partner.is_nude() && partner.has_vagina())
+				if(partner.is_chest_exposed() && partner.has_vagina())
 					message = "cums onto \the [partner]'s breasts."
 				else
 					message = "cums on \the [partner]'s chest and neck."
@@ -213,7 +192,6 @@
 		return
 
 	dir = fuckdir
-
 	var/pixel_x_diff = 0
 	var/pixel_y_diff = 0
 	var/final_pixel_y = initial(pixel_y)
@@ -274,7 +252,7 @@
 		if(user_not_tired && user.refactory_period >= 1)
 			to_chat(user, "<span class='warning'>You're still exhausted from the last time.</span>")
 			return FALSE
-		if(require_user_naked && !user.is_nude())
+		if(require_user_naked && !user.is_groin_exposed() && !user.is_chest_exposed())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
 			return FALSE
@@ -298,7 +276,7 @@
 		if(target_not_tired && target.refactory_period >= 1)
 			to_chat(user, "<span class='warning'>They're still exhausted from the last time.</span>")
 			return FALSE
-		if(require_target_naked && !target.is_nude())
+		if(require_target_naked && !target.is_groin_exposed() && !target.is_chest_exposed())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
 			return FALSE
@@ -317,14 +295,14 @@
 		return TRUE
 	return FALSE
 
-/datum/interaction/lewd/post_interaction(mob/user, mob/target)
+/datum/interaction/lewd/post_interaction(mob/living/user, mob/living/target)
 	if(user_refactory_cost)
 		user.refactory_period += user_refactory_cost
 	if(target_refactory_cost)
 		target.refactory_period += target_refactory_cost
 	return ..()
 
-/datum/interaction/lewd/get_action_link_for(mob/user, mob/target)
-	return "<font color='#FF0000'><b>LEWD:</b></font> [..()]"
+/datum/interaction/lewd/get_action_link_for(mob/living/user, mob/living/target)
+	return "<font color='#FFADFF'><b>LEWD:</b></font> [..()]"
 	if(user.stat == DEAD)
 		return
