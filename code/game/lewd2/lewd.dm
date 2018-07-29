@@ -108,6 +108,7 @@
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
 	var/message
+	var/arms = partner.get_num_arms()
 
 	if(has_penis() && is_groin_exposed())
 		if(!istype(partner))
@@ -141,7 +142,7 @@
 				else
 					message = "cums on \the [partner]'s backside."
 			if(CUM_TARGET_HAND)
-				if(partner.get_num_arms() > 0)
+				if(arms > 0)
 					message = "cums in \the [partner]'s hand."
 				else
 					message = "cums on \the [partner]."

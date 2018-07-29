@@ -244,7 +244,7 @@
 
 /mob/living/proc/do_rimjob(mob/living/partner)
 	if(more_lewd_erp == TRUE)
-		visible_message("<font color=purple><b>\The [src]/<b> licks \the [partner]'s asshole.</span></font>")
+		visible_message("<font color=purple><b>\The [src]</b> licks \the [partner]'s asshole.</span></font>")
 		playsound(loc, "code/game/lewd/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 		partner.handle_post_sex(NORMAL_LUST, null, src)
 		partner.dir = get_dir(src, partner)

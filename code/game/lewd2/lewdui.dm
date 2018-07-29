@@ -20,7 +20,7 @@ var/list/interactions
 		usr.try_interaction(src)
 
 	if(!isliving(usr))
-		to_chat(usr, "You must be alive to use this!")
+		to_chat(usr, "<span class = 'warning'>You must be alive to use this!</span.")
 		return
 
 /proc/make_interactions(interaction)
@@ -35,7 +35,8 @@ var/list/interactions
 
 /mob/living/proc/list_interaction_attributes(mob/living/user)
 	var/dat = ""
-	if(user.get_num_arms() > 0)
+	var/arms = user.get_num_arms()
+	if(arms > 0)
 		dat += "...have hands."
 	if(!user.is_mouth_covered())
 		if(dat != "")
@@ -90,22 +91,25 @@ var/list/interactions
 	var/needs_physical_contact
 
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE)
+	var/arms = user.get_num_arms()
+
 	if(require_user_mouth && user.is_mouth_covered())
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>Your mouth is covered.</span>")
 		return FALSE
-	if(require_user_hands && user.get_num_arms() < 1)
+	if(require_user_hands && arms < 1)
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>You don't have hands.</span>")
 		return FALSE
 	return TRUE
 
 /datum/interaction/proc/evaluate_target(mob/living/user, mob/living/target, silent = TRUE)
+	var/arms = target.get_num_arms()
 	if(require_target_mouth && target.is_mouth_covered())
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
 		return FALSE
-	if(require_target_hands && target.get_num_arms() < 1)
+	if(require_target_hands && arms < 1)
 		if(!silent)
 			to_chat(user, "<span class = 'warning'>They don't have hands.</span>")
 		return FALSE
