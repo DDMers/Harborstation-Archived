@@ -48,12 +48,12 @@
 /client/proc/cmd_admin_headset_message(mob/M in GLOB.mob_list)
 	set category = "Special Verbs"
 	set name = "Headset Message"
-	
+
 	admin_headset_message(M)
 
 /client/proc/admin_headset_message(mob/M in GLOB.mob_list, sender = null)
 	var/mob/living/carbon/human/H = M
-	
+
 	if(!check_rights(R_ADMIN))
 		return
 
@@ -435,7 +435,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	else
 		new_character.mind_initialize()
 	if(!new_character.mind.assigned_role)
-		new_character.mind.assigned_role = "Assistant"//If they somehow got a null assigned role.
+		new_character.mind.assigned_role = "Fish"//If they somehow got a null assigned role.
 
 	new_character.key = G_found.key
 
