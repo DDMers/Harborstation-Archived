@@ -1,4 +1,32 @@
 /* ------------------------------------------------
+   ------------------GLOB LIST---------------------
+   ------------------------------------------------ */
+
+GLOBAL_LIST_INIT(dildo_shapes, list(
+		"Human"		= "human",
+		"Knotted"	= "knotted",
+		"Plain"		= "plain",
+		"Flared"	= "flared"
+		))
+GLOBAL_LIST_INIT(dildo_sizes, list(
+		"Small"		= 1,
+		"Medium"	= 2,
+		"Big"		= 3
+		))
+GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
+		"Cyan"		= "#00f9ff",//cyan
+		"Green"		= "#49ff00",//green
+		"Pink"		= "#ff4adc",//pink
+		"Yellow"	= "#fdff00",//yellow
+		"Blue"		= "#00d2ff",//blue
+		"Lime"		= "#89ff00",//lime
+		"Black"		= "#101010",//black
+		"Red"		= "#ff0000",//red
+		"Orange"	= "#ff9a00",//orange
+		"Purple"	= "#e300ff"//purple
+		))
+
+/* ------------------------------------------------
    -----------------MISC STUFF --------------------
    ------------------------------------------------ */
 
@@ -8,14 +36,21 @@
 	icon = 'code/game/lewd/icons/obj/items/dildo.dmi'
 	icon_state = "dildo"
 	item_state = "c_tube"
+	hitsound = 'sound/weapons/tap.ogg'
 	throwforce = 0
-	force = 0
-	throw_speed = 3
-	throw_range = 7
+	force = 5
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slammed", "bashed", "whipped")
 
 	var/hole = CUM_TARGET_VAGINA
+	var/lust = rand(3,5)
+	var/dildo_size = 3
+	var/can_customize = FALSE
+	var/random_color = FALSE
+	var/random_size = FALSE
+	var/random_shape = FALSE
+	var/dildo_shape = "human"
+	var/dildo_type = "dildo"
 
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	var/message = ""
@@ -26,7 +61,7 @@
 			message = (user == M) ? pick("fucks their own ass with \the [src]","shoves the [src] into their ass", "jams the [src] into their ass") : pick("fucks [M]'s asshole with \the [src]", "jams \the [src] into [M]'s ass")
 	if(message)
 		user.visible_message("<font color=purple><b>[user]</b> [message].</font>")
-		M.handle_post_sex(pick(3,4,5,6,7), null, user)
+		M.handle_post_sex(lust + dildo_size, null, user)
 		playsound(loc, "code/game/lewd/sound/interactions/bang[rand(4, 6)].ogg", 70, 1, -1)
 	else
 		return ..()
@@ -38,6 +73,115 @@
 		hole = CUM_TARGET_VAGINA
 
 	to_chat(user, "<span class='warning'>Hmmm. Maybe we should put it in \a [hole]?</span>")
+
+//custom one
+
+/obj/item/dildo/custom
+	name = "customizable dildo"
+	desc = "Thanks to significant advances in synthetic nanomaterials, this dildo is capable of taking on many different forms to fit the user's preferences! Pricy!"
+	icon_state = "dildo"
+	alpha = 192
+	can_customize = TRUE
+	dildo_type = "dildo"//pretty much just used for the icon state
+	random_color = TRUE
+	random_size = TRUE
+	random_shape = TRUE
+	dildo_shape = " "
+
+/obj/item/dildo/proc/update_appearance()
+	icon_state = "[dildo_type]_[dildo_shape]_[dildo_size]"
+	var/sizeword = ""
+	switch(dildo_size)
+		if(1)
+			sizeword = "small "
+		if(3)
+			sizeword = "big "
+		if(4)
+			sizeword = "huge "
+		if(5)
+			sizeword = "gigantic "
+
+	name = "[sizeword][dildo_shape] [can_customize ? "custom " : ""][dildo_type]"
+
+/obj/item/dildo/verb/customize()
+	set name = "Customize \the [src.name]"
+	set category = "Object"
+	set src in usr
+
+	if(QDELETED(src))
+		return
+	if(!isliving(user))
+		return
+	if(isAI(user))
+		return
+	if(user.stat > 0)//unconscious or dead
+		return
+	customize(user)
+
+/obj/item/dildo/proc/customize(mob/living/user)
+	if(!can_customize)
+		return FALSE
+	if(src && !user.incapacitated() && in_range(user,src))
+		var/color_choice = input(user,"Choose a color for your dildo.","Dildo Color") as null|anything in GLOB.dildo_colors
+		if(src && color_choice && !user.incapacitated() && in_range(user,src))
+			sanitize_inlist(color_choice, GLOB.dildo_colors, "Red")
+			color = GLOB.dildo_colors[color_choice]
+	update_appearance()
+	if(src && !user.incapacitated() && in_range(user,src))
+		var/shape_choice = input(user,"Choose a shape for your dildo.","Dildo Shape") as null|anything in GLOB.dildo_shapes
+		if(src && shape_choice && !user.incapacitated() && in_range(user,src))
+			sanitize_inlist(shape_choice, GLOB.dildo_colors, "Knotted")
+			dildo_shape = GLOB.dildo_shapes[shape_choice]
+	update_appearance()
+	if(src && !user.incapacitated() && in_range(user,src))
+		var/size_choice = input(user,"Choose the size for your dildo.","Dildo Size") as null|anything in GLOB.dildo_sizes
+		if(src && size_choice && !user.incapacitated() && in_range(user,src))
+			sanitize_inlist(size_choice, GLOB.dildo_colors, "Medium")
+			dildo_size = GLOB.dildo_sizes[size_choice]
+	update_appearance()
+	if(src && !user.incapacitated() && in_range(user,src))
+		var/transparency_choice = input(user,"Choose the transparency of your dildo. Lower is more transparent!(192-255)","Dildo Transparency") as null|num
+		if(src && transparency_choice && !user.incapacitated() && in_range(user,src))
+			sanitize_integer(transparency_choice, 192, 255, 192)
+			alpha = transparency_choice
+	update_appearance()
+	return TRUE
+
+/obj/item/dildo/Initialize()
+	. = ..()
+	if(random_color == TRUE)
+		var/randcolor = pick(GLOB.dildo_colors)
+		color = GLOB.dildo_colors[randcolor]
+	if(random_shape == TRUE)
+		var/randshape = pick(GLOB.dildo_shapes)
+		dildo_shape = GLOB.dildo_shapes[randshape]
+	if(random_size == TRUE)
+		var/randsize = pick(GLOB.dildo_sizes)
+		dildo_size = GLOB.dildo_sizes[randsize]
+	update_appearance()
+	alpha		= rand(192, 255)
+	pixel_y 	= rand(-7,7)
+	pixel_x 	= rand(-7,7)
+
+/obj/item/dildo/examine(mob/user)
+	..()
+	if(can_customize)
+		user << "<span class='notice'>Use the 'Customize \the [src.name]' to customize it.</span>"
+
+/obj/item/dildo/huge
+	alpha = 192
+	name = "literal horse cock"
+	desc = "THIS THING IS HUGE!"
+	dildo_size = 5
+	random_color = TRUE
+	random_shape = TRUE
+
+/obj/item/dildo/random//totally random
+	alpha = 192
+	name = "random dildo"
+	random_color = TRUE
+	random_shape = TRUE
+	random_size = TRUE
 
 //collar
 /obj/item/electropack/shockcollar
@@ -124,7 +268,9 @@
 	else
 		return
 
-//reagent here
+/* ------------------------------------------------
+   ----------------REAGENT STUFF-------------------
+   ------------------------------------------------ */
 /datum/reagent/consumable/cum
 	name = "cum"
 	id = "cum"
