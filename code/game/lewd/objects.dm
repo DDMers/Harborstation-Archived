@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 	attack_verb = list("slammed", "bashed", "whipped")
 
 	var/hole = CUM_TARGET_VAGINA
-	var/lust = rand(3,5)
+	var/lust = 5
 	var/dildo_size = 3
 	var/can_customize = FALSE
 	var/random_color = FALSE
@@ -104,19 +104,17 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 	name = "[sizeword][dildo_shape] [can_customize ? "custom " : ""][dildo_type]"
 
 /obj/item/dildo/verb/customize()
-	set name = "Customize \the [src.name]"
+	name = "Customize \the [src.name]"
 	set category = "Object"
 	set src in usr
 
 	if(QDELETED(src))
 		return
-	if(!isliving(user))
+	if(!isliving(usr))
 		return
-	if(isAI(user))
+	if(isAI(usr))
 		return
-	if(user.stat > 0)//unconscious or dead
-		return
-	customize(user)
+	customize(usr)
 
 /obj/item/dildo/proc/customize(mob/living/user)
 	if(!can_customize)

@@ -22,7 +22,7 @@ Difficulty: Very Hard
 */
 
 /mob/living/simple_animal/hostile/megafauna/colossus
-	name = "colossus"
+	name = "whale"
 	desc = "A monstrous creature protected by heavy shielding."
 	health = 2500
 	maxHealth = 2500
