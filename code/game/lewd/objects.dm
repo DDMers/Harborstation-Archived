@@ -103,7 +103,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 
 	name = "[sizeword][dildo_shape] [can_customize ? "custom " : ""][dildo_type]"
 
-/obj/item/dildo/verb/customize()
+/obj/item/dildo/verb/dothecustomize()
 	name = "Customize \the [src.name]"
 	set category = "Object"
 	set src in usr

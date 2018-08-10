@@ -26,14 +26,14 @@ Difficulty: Very Hard
 	desc = "A monstrous creature protected by heavy shielding."
 	health = 2500
 	maxHealth = 2500
-	attacktext = "judges"
+	attacktext = "slaps"
 	attack_sound = 'sound/magic/clockwork/ratvar_attack.ogg'
 	icon_state = "eva"
 	icon_living = "eva"
 	icon_dead = "dragon_dead"
 	friendly = "stares down"
 	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
-	speak_emote = list("roars")
+	speak_emote = list("blubbers")
 	armour_penetration = 40
 	melee_damage_lower = 40
 	melee_damage_upper = 40
