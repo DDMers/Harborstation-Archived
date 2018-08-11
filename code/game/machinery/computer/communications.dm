@@ -52,6 +52,8 @@
 /obj/machinery/computer/communications/Topic(href, href_list)
 	if(..())
 		return
+	if(!usr.canUseTopic(src))
+		return
 	if(!is_station_level(z) && !is_reserved_level(z)) //Can only use in transit and on SS13
 		to_chat(usr, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
 		return
@@ -472,7 +474,7 @@
 				if (authenticated==2)
 					dat += "<BR><BR><B>Captain Functions</B>"
 					dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=announce'>Make a Captain's Announcement</A> \]"
-					var/cross_servers_count = length(CONFIG_GET(keyed_string_list/cross_server))
+					var/cross_servers_count = length(CONFIG_GET(keyed_list/cross_server))
 					if(cross_servers_count)
 						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=crossserver'>Send a message to [cross_servers_count == 1 ? "an " : ""]allied station[cross_servers_count > 1 ? "s" : ""]</A> \]"
 					if(SSmapping.config.allow_custom_shuttles)
