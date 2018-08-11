@@ -14,7 +14,6 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
-#include "_maps\boxstation.dm"
 #include "_maps\Summer_Ball_Progress_V2.4.dmm"
 #include "_maps\underwater.dmm"
 #include "code\_compile_options.dm"
