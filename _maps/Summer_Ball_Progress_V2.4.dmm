@@ -363,7 +363,7 @@
 "gY" = (/obj/structure/closet/crate/wooden{name = "experimental costume crate"},/obj/item/clothing/mask/chameleon,/obj/item/clothing/head/chameleon,/obj/item/clothing/suit/chameleon,/obj/item/clothing/shoes/chameleon,/obj/item/clothing/under/chameleon,/obj/effect/turf_decal/bot,/turf/open/floor/plasteel/darkbrown,/area/awaymission/beach)
 "gZ" = (/obj/structure/toilet{pixel_y = 8},/obj/machinery/light/small{dir = 8},/obj/machinery/newscaster{pixel_y = -32},/obj/machinery/button/door{id = "Toilet3"; name = "Lock Control"; normaldoorcontrol = 1; pixel_x = -25; specialfunctions = 4},/turf/open/floor/plasteel/white,/area/awaymission/beach)
 "ha" = (/obj/machinery/door/airlock{id_tag = "Toilet3"; name = "Unit 3"},/turf/open/floor/plasteel/freezer,/area/awaymission/beach)
-"hb" = (/obj/structure/sink{dir = 4; pixel_x = 11},/obj/structure/mirror{pixel_x = 32; step_x = 0},/turf/open/floor/plasteel/white,/area/awaymission/beach)
+"hb" = (/obj/structure/sink{dir = 4; pixel_x = 11},/obj/structure/mirror{pixel_x = 32},/turf/open/floor/plasteel/white,/area/awaymission/beach)
 "hc" = (/obj/machinery/vending/cigarette,/turf/open/floor/plasteel/vault/side{tag = "icon-vault (WEST)"; icon_state = "vault"; dir = 8},/area/awaymission/beach)
 "hd" = (/obj/structure/table/wood,/turf/open/floor/plasteel/vault/side{tag = "icon-vault (NORTHWEST)"; icon_state = "vault"; dir = 9},/area/awaymission/beach)
 "he" = (/obj/structure/table/wood,/obj/item/clipboard,/obj/item/folder,/obj/item/storage/fancy/candle_box{pixel_x = 5; pixel_y = 5},/obj/item/storage/fancy/candle_box{pixel_x = 3},/turf/open/floor/plasteel/vault/side{tag = "icon-vault (NORTHWEST)"; icon_state = "vault"; dir = 9},/area/awaymission/beach)
