@@ -22,6 +22,7 @@
 	var/lust = 0
 	var/multiorgasms = 0
 	var/refactory_period = 0
+	var/refactory_multiplier = 1 //100 (default refactory) *1, set 0 to theoraticaly kill the cooldown
 	var/lastmoan
 	var/moan
 	var/last_partner
@@ -175,16 +176,15 @@
 		playsound(loc, "code/game/lewd/sound/interactions/final_m[rand(1, 3)].ogg", 90, 1, 0)
 	else if(gender == FEMALE)
 		playsound(loc, "code/game/lewd/sound/interactions/final_f[rand(1, 5)].ogg", 70, 1, 0)
-
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	multiorgasms += 1
 
-	if(multiorgasms > (sexual_potency*0.34)) //accurate enough, i dont want to get -0 in these
-		refactory_period = 100 - sexual_potency //sex cooldown
+	if(multiorgasms > (sexual_potency * 0.34)) //accurate enough, i dont want to get -0 in these
+		refactory_period = (100 * refactory_multiplier) - sexual_potency //sex cooldown
 		src.set_drugginess(rand(30, 40))
 	else
-		refactory_period = 100 - sexual_potency
-		src.set_drugginess(6)
+		refactory_period = (100 * refactory_multiplier) - sexual_potency
+		src.set_drugginess(rand(6, 20))
 
 /mob/living/carbon/human/cum(mob/living/partner, target_orifice)
 	if(multiorgasms < sexual_potency)

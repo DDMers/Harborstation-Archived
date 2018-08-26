@@ -85,7 +85,8 @@
 			if(prob(partner.sexual_potency * 0.6))
 				partner.emote("chokes on \The [src]'s dick")
 				partner.adjustOxyLoss(5)
-				playsound(loc, "lewd/sound/interactions/choke_f1.ogg", 70, 1, -1)
+				prob(50) //stop the fucking spam alright?
+					playsound(loc, "lewd/sound/interactions/choke_f1.ogg", 70, 1, -1)
 				lust_increase += 5
 			else
 				partner.emote("gasps")
