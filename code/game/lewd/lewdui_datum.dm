@@ -1,3 +1,10 @@
+/datum/interaction/headpat
+	command = "headpat"
+	description = "Pat their head."
+	require_user_hands = TRUE
+	simple_message = "USER headpats TARGET!"
+	needs_physical_contact = TRUE
+
 /datum/interaction/lewd/kiss
 	command = "deepkiss"
 	description = "Kiss them deeply."
@@ -7,8 +14,10 @@
 
 /datum/interaction/lewd/kiss/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
-	if(user.lust < 5)   user.lust = 5
-	if(target.lust < 5) target.lust = 5
+	if(user.lust < 5)
+		user.lust = 5
+	if(target.lust < 5)
+		target.lust = 5
 
 /datum/interaction/lewd/kiss/display_interaction(mob/living/user, mob/living/target)
 	user.kiss(target)

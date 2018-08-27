@@ -26,7 +26,7 @@ var/list/interactions
 /proc/make_interactions(interaction)
 	if(!interactions)
 		interactions = list()
-		for(var/itype in typesof(/datum/interaction)-/datum/interaction)
+		for(var/itype in subtypesof(/datum/interaction))
 			var/datum/interaction/I = new itype()
 			interactions[I.command] = I
 
