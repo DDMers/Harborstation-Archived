@@ -23,7 +23,8 @@
 					/obj/item/reagent_containers/glass/bottle/salglu_solution = 3,
 					/obj/item/reagent_containers/glass/bottle/morphine = 4,
 					/obj/item/reagent_containers/glass/bottle/toxin = 3,
-					/obj/item/reagent_containers/syringe/antiviral = 6)
+					/obj/item/reagent_containers/syringe/antiviral = 6,
+					/obj/item/clothing/mask/muzzle/ballgag = 100)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
 		              /obj/item/reagent_containers/pill/morphine = 4,
 		              /obj/item/reagent_containers/pill/charcoal = 6)
