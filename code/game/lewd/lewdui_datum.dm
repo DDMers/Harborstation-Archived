@@ -57,7 +57,7 @@
 	require_target_vagina = TRUE
 	interaction_sound = null
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	require_target_naked = TRUE
 	max_distance = 1
 
@@ -108,7 +108,7 @@
 	interaction_sound = null
 	require_target_mouth = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/facefuck/display_interaction(mob/living/user, mob/living/target)
@@ -121,7 +121,7 @@
 	require_user_penis = TRUE
 	require_target_mouth = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/target)
@@ -146,7 +146,7 @@
 	interaction_sound = null
 	require_user_penis = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	require_target_naked = TRUE
 	require_target_breast = TRUE
 	max_distance = 1
@@ -162,7 +162,7 @@
 	require_target_penis = TRUE
 	user_not_tired = TRUE
 	target_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	require_target_naked = TRUE
 	max_distance = 1
 
@@ -178,7 +178,7 @@
 	require_target_penis = TRUE
 	user_not_tired = TRUE
 	target_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	require_target_naked = TRUE
 	max_distance = 1
 
@@ -190,7 +190,7 @@
 	require_target_penis = TRUE
 	user_not_tired = TRUE
 	target_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	require_target_naked = TRUE
 	require_user_breast = TRUE
 	max_distance = 1
@@ -218,7 +218,7 @@
 	require_target_mouth = TRUE
 	require_user_anus = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	//require_user_naked = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/mountface/display_interaction(mob/living/user, mob/living/target)
