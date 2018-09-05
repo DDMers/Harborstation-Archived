@@ -105,7 +105,8 @@
 		              /obj/item/clothing/suit/jacket/letterman_syndie = 1,
 		              /obj/item/clothing/under/jabroni = 1,
 		              /obj/item/clothing/suit/vapeshirt = 1,
-		              /obj/item/clothing/under/geisha = 1)
+		              /obj/item/clothing/under/geisha = 1,
+		              /obj/item/clothing/mask/muzzle/ballgag = 5)
 	premium = list(/obj/item/clothing/under/suit_jacket/checkered = 1,
 		           /obj/item/clothing/head/mailman = 1,
 		           /obj/item/clothing/under/rank/mailman = 1,
