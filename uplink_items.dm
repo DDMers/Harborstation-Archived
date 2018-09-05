@@ -2,7 +2,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /proc/get_uplink_items(var/datum/game_mode/gamemode = null, allow_sales = TRUE, allow_restricted = TRUE)
 	var/list/filtered_uplink_items = list()
-	var/list/sale_items = list()
+	var/list/sale_items = list() // nani travis?
 
 	for(var/path in GLOB.uplink_items)
 		var/datum/uplink_item/I = new path
