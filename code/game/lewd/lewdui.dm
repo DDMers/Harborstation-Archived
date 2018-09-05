@@ -2,8 +2,6 @@
   -------------------UI STUFF-----------------------
   --------------------------------------------------
 */
-var/list/interactions
-
 /mob/living/carbon/human/ShiftClick(mob/user)
 	. = ..()
 	if(usr != src && !usr.restrained() && isliving(user))
