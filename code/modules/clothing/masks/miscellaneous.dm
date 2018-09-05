@@ -16,6 +16,28 @@
 			return
 	..()
 
+/obj/item/clothing/mask/muzzle/ballgag
+	name = "ball gag"
+	desc = "To make all those noises lewder."
+	icon_state = "gag"
+	item_state = "gag"
+	var/locked_on = 0
+
+/obj/item/clothing/mask/muzzle/ballgag/attack_self(mob/user)
+	if(user && user.incapacitated())
+		return
+	locked_on = !locked_on
+	if(locked_on)
+		to_chat(user, "<span class='warning'>You decide to lock the gag when placing it on someone, making them unable to remove it alone.</span>")
+	else
+		to_chat(user, "<span class='warning'>You decide not to lock the gag when placing it on someone, making them able to remove it freely.</span>")
+
+/obj/item/clothing/mask/muzzle/ballgag/attack_hand(mob/user)
+	if(locked_on && loc == user && user.get_item_by_slot(SLOT_WEAR_MASK))
+		to_chat(user, "<span class='warning'>The gag is fastened tight! You'll need help taking this off!</span>")
+		return
+	..()
+
 /obj/item/clothing/mask/surgical
 	name = "sterile mask"
 	desc = "A sterile mask designed to help prevent the spread of diseases."
